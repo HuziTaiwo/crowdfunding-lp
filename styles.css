@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Commissioner', sans-serif;
+}
+
+body {
+  position: relative;
 }
 
 #showcase {
@@ -47,6 +54,7 @@ main {
 
 main > section {
   padding: 35px;
+  margin: 0 30px;
   margin-bottom: 30px;
   box-shadow: 4px 4px 20px rgb(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -85,17 +93,42 @@ main > section {
 
 .backers {
   justify-content: center;
-  background: hsl(176, 82%, 30%);
+  background: hsl(176, 50%, 47%);
   color: hsl(0, 0%, 100%);
+  transition: 0.5s ease-in-out;
 }
 
-.backers img {
-  width: 100%;
+.backers:hover {
+  background: hsl(176, 82%, 30%); 
 }
+
+/* .backers img {
+  width: 100%;
+} */
 
 .counts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.counts small {
+  color: hsl(0, 0%, 48%);
+}
+
+
+
+@media (max-width: 600px) {
+  .counts {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .pro_01,
+  .pro_02 {
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+  }
 }
 
 .pro_03,
@@ -107,18 +140,250 @@ main > section {
 .progress-bar {
   width: 100%;
   max-width: 680px;
-  background: hsl(176, 50%, 47%);
+  background: hsl(0, 0%, 94%);
   height: 10px;
   margin-top: 30px;
   border-radius: 20px;
   position: relative;
-  overflow: hidden;
 }
 
-.progress-bar::after {
-  width: 100%;
-  background: hsl(0, 0%, 48%);
+.bar {
+  background: hsl(176, 50%, 47%);
   position: absolute;
-  right: 20%;
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  left: 0;
   top: 0;
+}
+
+.project > h3 {
+  padding-bottom: 25px;
+}
+
+.project p {
+  line-height: 1.7;
+  padding-bottom: 20px;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  margin-bottom: 20px;
+}
+
+.card h3 + p {
+  color: hsl(176, 50%, 47%) !important;
+}
+
+.crd-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card p {
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.crd-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.crd-foot > div {
+  display: flex;
+}
+
+.crd-foot h4 {
+  font-size: 1.5rem;
+  padding-right: 5px;
+}
+
+.crd-foot small {
+  color: hsl(0, 0%, 48%);
+  font: 1.1rem;
+}
+
+.crd-foot button {
+  background: hsl(176, 50%, 47%);
+  font: 1.1rem;
+  padding: 0.8rem 3rem;
+  border-radius: 100px;
+  border: none;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.crd-foot button:hover {
+  background: hsl(176, 82%, 30%);
+}
+
+.crd_03 {
+  opacity: 0.5;
+}
+
+.crd_03 button {
+  background: hsl(0, 0%, 48%);
+  cursor: not-allowed;
+}
+
+.project-bg {
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.back-project {
+  background: hsl(0, 0%, 100%);
+  width: 100%;
+  max-width: 800px;
+  padding: 30px;
+  margin: 0 20px;
+  border-radius: 7px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.pill {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  margin-bottom: 10px;
+  display: flex;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+}
+
+.pill.active {
+  box-shadow: 1px 1px 2px hsl(176, 50%, 47%);
+  border: 1px solid hsl(176, 50%, 47%);
+}
+
+.pill input[type="radio"] {
+  margin-right: 30px;
+}
+
+.pill label {
+  transition: 0.5s ease-in-out;
+}
+
+.pill label:hover {
+  color: hsl(176, 50%, 47%);
+}
+
+.pill p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.back-project h3,
+.back-project > p,
+.pill h4 {
+  padding-bottom: 10px;
+}
+
+.selected {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  display: none;
+}
+
+.selected button {
+  background: hsl(176, 50%, 47%);
+  font: 1.1rem;
+  padding: 0.8rem 2.5rem;
+  border-radius: 100px;
+  border: none;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.selected button.cont:hover {
+  background: hsl(176, 82%, 30%);
+}
+
+.selected button.price {
+  margin-right: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+/* .pl_02,.pl_03 {
+  padding-bottom: 0;
+} */
+
+p.pledge {
+  color: hsl(0, 0%, 48%);
+  font-size: 1rem;
+}
+
+.modal-bg {
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal {
+  background: hsl(0, 0%, 100%);
+  padding: 50px 30px;
+  border-radius: 7px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal img.check {
+  margin-bottom: 20px;
+}
+
+.modal p {
+  padding: 20px 0;
+  line-height: 1.7;
+}
+
+.modal button {
+  background: hsl(176, 50%, 47%);
+  font: 1.1rem;
+  padding: 0.8rem 2.5rem;
+  border-radius: 100px;
+  border: none;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.modal button:hover {
+  background: hsl(176, 82%, 30%);
 }
