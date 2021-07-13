@@ -19,6 +19,7 @@ body {
 header {
   padding: 30px 80px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -34,6 +35,55 @@ header {
 .links a {
   text-decoration: none;
   color: hsl(0, 0%, 100%);
+}
+
+.toggle {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  nav {
+    background: hsl(0, 0%, 100%);
+    position: absolute;
+    height: 30vh;
+    width: 300px;
+    top: 14vh;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    z-index: 2;
+    display: none;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .links {
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .links a {
+    color: hsl(0, 0%, 0%);
+  }
+
+  .toggle {
+    display: block;
+    padding: 7px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 375px) {
+  header {
+    padding: 20px;
+  }
 }
 
 main {
@@ -59,6 +109,13 @@ main > section {
   box-shadow: 4px 4px 20px rgb(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 7px;
+}
+
+@media (max-width: 375px) {
+  main > section {
+    padding: 10px;
+    margin: 0;
+  }
 }
 
 .intro h1,
@@ -102,9 +159,11 @@ main > section {
   background: hsl(176, 82%, 30%); 
 }
 
-/* .backers img {
-  width: 100%;
-} */
+@media (max-width: 600px) {
+  .hide {
+    display: none;
+  }
+}
 
 .counts {
   display: grid;
@@ -171,6 +230,7 @@ main > section {
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 30px 40px;
   margin-bottom: 20px;
+  border-radius: 7px;
 }
 
 .card h3 + p {
@@ -230,6 +290,19 @@ main > section {
 .crd_03 button {
   background: hsl(0, 0%, 48%);
   cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .crd-top,
+  .crd-foot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .crd-foot > div {
+    margin-bottom: 20px;
+  }
+
 }
 
 .project-bg {
